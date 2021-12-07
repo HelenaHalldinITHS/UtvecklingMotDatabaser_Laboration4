@@ -5,8 +5,9 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
 import java.util.List;
+import java.util.Optional;
 
-public class MemberDaoImpl implements MemberDao{
+public class MemberDaoImpl implements MemberDao {
     EntityManagerFactory emf;
     EntityManager em;
 
@@ -23,13 +24,13 @@ public class MemberDaoImpl implements MemberDao{
     }
 
     @Override
-    public Member getById(int id) {
-        return em.find(Member.class,id);
+    public Optional<Member> getById(int id) {
+        return Optional.ofNullable(em.find(Member.class, id));
     }
 
     @Override
     public List<Member> getAll() {
-        return em.createQuery("select m from Member m",Member.class).getResultList();
+        return em.createQuery("select m from Member m", Member.class).getResultList();
     }
 
     @Override

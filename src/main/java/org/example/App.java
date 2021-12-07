@@ -24,10 +24,10 @@ public class App {
         memberDao.delete(amanda);
 
         memberDao.getActiveMembers().forEach(System.out::println);
-         */
 
         memberDao.getInactiveMembers().forEach(System.out::println);
-
+         */
+        memberDao.getById(7).ifPresentOrElse(System.out::println, () -> System.out.println("Det finns ingen member med detta id"));
 
 
 

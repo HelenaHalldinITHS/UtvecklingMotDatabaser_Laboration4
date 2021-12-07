@@ -1,9 +1,10 @@
 package org.example;
 
 import java.util.List;
+import java.util.Optional;
 
 public interface MemberDao {
-    Member getById(int id);
+    Optional<Member> getById(int id);
     List<Member> getAll();
     void update(Member member);
     void create(Member member);
