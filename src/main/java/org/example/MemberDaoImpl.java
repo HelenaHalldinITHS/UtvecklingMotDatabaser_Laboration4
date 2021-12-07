@@ -1,8 +1,20 @@
 package org.example;
 
+import jakarta.persistence.EntityManager;
+import jakarta.persistence.EntityManagerFactory;
+import jakarta.persistence.Persistence;
+
 import java.util.List;
 
 public class MemberDaoImpl implements MemberDao{
+    EntityManagerFactory emf;
+    EntityManager em;
+
+    public MemberDaoImpl() {
+        emf = Persistence.createEntityManagerFactory("jpa");
+        em = emf.createEntityManager();
+    }
+
     @Override
     public Member getById(int id) {
         return null;
