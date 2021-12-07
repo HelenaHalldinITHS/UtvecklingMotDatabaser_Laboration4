@@ -16,6 +16,11 @@ public class MemberDaoImpl implements MemberDao{
     }
 
     @Override
+    public void create(Member member) {
+
+    }
+
+    @Override
     public Member getById(int id) {
         return null;
     }
@@ -26,17 +31,12 @@ public class MemberDaoImpl implements MemberDao{
     }
 
     @Override
-    public void update(Member student) {
+    public void update(Member member) {
 
     }
 
     @Override
-    public void create(Member student) {
-
-    }
-
-    @Override
-    public void delete(Member student) {
+    public void delete(Member member) {
 
     }
 
