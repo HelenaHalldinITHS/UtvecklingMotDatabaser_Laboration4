@@ -17,7 +17,9 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public void create(Member member) {
-
+        em.getTransaction().begin();
+        em.persist(member);
+        em.getTransaction().commit();
     }
 
     @Override
