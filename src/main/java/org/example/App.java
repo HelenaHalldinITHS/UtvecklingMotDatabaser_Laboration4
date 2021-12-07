@@ -22,9 +22,11 @@ public class App {
 
         Member amanda = memberDao.getById(6);
         memberDao.delete(amanda);
-         */
 
         memberDao.getActiveMembers().forEach(System.out::println);
+         */
+
+        memberDao.getInactiveMembers().forEach(System.out::println);
 
 
 

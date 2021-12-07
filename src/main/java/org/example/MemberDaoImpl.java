@@ -53,6 +53,6 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public List<Member> getInactiveMembers() {
-        return null;
+        return em.createQuery("select m from Member m where m.active = false", Member.class).getResultList();
     }
 }
