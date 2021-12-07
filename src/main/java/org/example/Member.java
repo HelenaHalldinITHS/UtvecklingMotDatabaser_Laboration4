@@ -71,6 +71,7 @@ public class Member {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", active=" + active +
+                ", RegistrationDate=" + RegistrationDate +
                 '}';
     }
 }
