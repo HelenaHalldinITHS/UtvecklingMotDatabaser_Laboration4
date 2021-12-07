@@ -41,7 +41,9 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public void delete(Member member) {
-
+        em.getTransaction().begin();
+        em.remove(member);
+        em.getTransaction().commit();
     }
 
     @Override
