@@ -5,6 +5,7 @@ import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 import jakarta.persistence.TypedQuery;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -61,7 +62,15 @@ public class MemberDaoImpl implements MemberDao {
     @Override
     public List<Member> getByLastName(String lastName) {
         TypedQuery<Member> query = em.createQuery("select m from Member m where m.lastName = :lastname", Member.class);
-        query.setParameter("lastname",lastName);
+        query.setParameter("lastname", lastName);
+        return query.getResultList();
+    }
+
+    @Override
+    public List<Member> getByRegistrationDateInterval(Date from, Date to) {
+        TypedQuery<Member> query = em.createQuery("select m from Member m where m.registrationDate between :from and :to", Member.class);
+        query.setParameter("from", from);
+        query.setParameter("to",to);
         return query.getResultList();
     }
 }

@@ -15,7 +15,7 @@ public class Member {
     private boolean active;
 
     @Basic
-    private java.sql.Date RegistrationDate;
+    private java.sql.Date registrationDate;
 
     public Member(){}
 
@@ -23,7 +23,7 @@ public class Member {
         this.firstName = firstName;
         this.lastName = lastName;
         this.active = active;
-        RegistrationDate = registrationDate;
+        this.registrationDate = registrationDate;
     }
 
     public String getFirstName() {
@@ -51,11 +51,11 @@ public class Member {
     }
 
     public Date getRegistrationDate() {
-        return RegistrationDate;
+        return registrationDate;
     }
 
     public void setRegistrationDate(Date registrationDate) {
-        RegistrationDate = registrationDate;
+        this.registrationDate = registrationDate;
     }
 
     @Override
@@ -65,7 +65,7 @@ public class Member {
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", active=" + active +
-                ", RegistrationDate=" + RegistrationDate +
+                ", registrationDate=" + registrationDate +
                 '}';
     }
 }

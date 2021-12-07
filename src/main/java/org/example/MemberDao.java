@@ -1,5 +1,6 @@
 package org.example;
 
+import java.sql.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -12,4 +13,5 @@ public interface MemberDao {
     List<Member> getActiveMembers();
     List<Member> getInactiveMembers();
     List<Member> getByLastName(String lastName);
+    List<Member> getByRegistrationDateInterval(Date from, Date to);
 }

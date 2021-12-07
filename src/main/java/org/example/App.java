@@ -59,6 +59,12 @@ public class App {
         //Test av getByLastName
         System.out.println("Test av getByLastName: (borde skriva ut Helena & Tobias) ");
         memberDao.getByLastName("Halldin").forEach(System.out::println);
+        System.out.println();
+
+        //Test
+        System.out.println("Test av getByRegistrationDateInterval: (borde skriva ut de som registrerat sig mellan 2000 och 2015)");
+        memberDao.getByRegistrationDateInterval(Date.valueOf("2000-01-01"), Date.valueOf("2015-12-31")).forEach(System.out::println);
+        System.out.println();
 
     }
 }
