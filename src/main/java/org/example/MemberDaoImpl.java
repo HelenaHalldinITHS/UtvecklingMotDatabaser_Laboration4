@@ -29,7 +29,7 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public List<Member> getAll() {
-        return null;
+        return em.createQuery("select m from Member m",Member.class).getResultList();
     }
 
     @Override
