@@ -1,17 +1,18 @@
 package org.example;
 
+import java.sql.Date;
 import java.util.Optional;
 
 public class App {
     public static void main( String[] args ) {
         MemberDao memberDao = new MemberDaoImpl();
 
-        memberDao.create(new Member("Helena", "Halldin", true));
-        memberDao.create(new Member("Stina","Karlsson", false));
-        memberDao.create(new Member("Muhamad","Ali", true));
-        memberDao.create(new Member("Tobias","Eklund", true));
-        memberDao.create(new Member("Sara","Olsson", false));
-        memberDao.create(new Member("Amanda","White", false));
+        memberDao.create(new Member("Helena", "Halldin", true, Date.valueOf("2011-01-20")));
+        memberDao.create(new Member("Stina","Karlsson", false, Date.valueOf("2011-04-05")));
+        memberDao.create(new Member("Muhamad","Ali", true, Date.valueOf("2013-03-20")));
+        memberDao.create(new Member("Tobias","Eklund", true, Date.valueOf("2017-06-22")));
+        memberDao.create(new Member("Sara","Olsson", false, Date.valueOf("2018-12-09")));
+        memberDao.create(new Member("Amanda","White", false, Date.valueOf("2019-12-02")));
 
         // Test av getById:
         System.out.println("Test av getById():");

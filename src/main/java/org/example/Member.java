@@ -19,12 +19,6 @@ public class Member {
 
     public Member(){}
 
-    public Member(String firstName, String lastName, boolean active) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.active = active;
-    }
-
     public Member(String firstName, String lastName, boolean active, Date registrationDate) {
         this.firstName = firstName;
         this.lastName = lastName;
