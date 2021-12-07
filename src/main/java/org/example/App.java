@@ -12,9 +12,14 @@ public class App {
         memberDao.create(new Member("Sara","Olsson", false));
         memberDao.create(new Member("Amanda","White", false));
         System.out.println(memberDao.getById(1));
+        memberDao.getAll().forEach(System.out::println);
          */
 
-        memberDao.getAll().forEach(System.out::println);
+        Member tobias = memberDao.getById(4);
+        tobias.setLastName("Halldin");
+        memberDao.update(tobias);
+
+
 
     }
 }

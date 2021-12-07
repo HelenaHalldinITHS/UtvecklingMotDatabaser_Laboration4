@@ -34,7 +34,9 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public void update(Member member) {
-
+        em.getTransaction().begin();
+        em.merge(member);
+        em.getTransaction().commit();
     }
 
     @Override
