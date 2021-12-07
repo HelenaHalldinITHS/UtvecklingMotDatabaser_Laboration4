@@ -13,6 +13,7 @@ public class App {
         memberDao.create(new Member("Amanda","White", false));
 
         System.out.println(memberDao.getById(1));
+        memberDao.getById(7).ifPresentOrElse(System.out::println, () -> System.out.println("Det finns ingen member med detta id"));
 
         memberDao.getAll().forEach(System.out::println);
 
@@ -27,7 +28,8 @@ public class App {
 
         memberDao.getInactiveMembers().forEach(System.out::println);
          */
-        memberDao.getById(7).ifPresentOrElse(System.out::println, () -> System.out.println("Det finns ingen member med detta id"));
+
+        memberDao.getByLastName("Halldin").forEach(System.out::println);
 
 
 

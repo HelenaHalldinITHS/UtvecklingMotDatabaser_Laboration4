@@ -11,4 +11,5 @@ public interface MemberDao {
     void delete(Member member);
     List<Member> getActiveMembers();
     List<Member> getInactiveMembers();
+    List<Member> getByLastName(String lastName);
 }

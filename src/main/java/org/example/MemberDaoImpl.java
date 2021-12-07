@@ -3,6 +3,7 @@ package org.example;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
+import jakarta.persistence.TypedQuery;
 
 import java.util.List;
 import java.util.Optional;
@@ -55,5 +56,12 @@ public class MemberDaoImpl implements MemberDao {
     @Override
     public List<Member> getInactiveMembers() {
         return em.createQuery("select m from Member m where m.active = false", Member.class).getResultList();
+    }
+
+    @Override
+    public List<Member> getByLastName(String lastName) {
+        TypedQuery<Member> query = em.createQuery("select m from Member m where m.lastName = :lastname", Member.class);
+        query.setParameter("lastname",lastName);
+        return query.getResultList();
     }
 }
