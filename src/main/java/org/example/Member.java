@@ -46,4 +46,14 @@ public class Member {
     public void setActive(boolean active) {
         this.active = active;
     }
+
+    @Override
+    public String toString() {
+        return "Member{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", active=" + active +
+                '}';
+    }
 }
