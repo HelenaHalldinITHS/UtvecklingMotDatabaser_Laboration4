@@ -24,7 +24,7 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public Member getById(int id) {
-        return null;
+        return em.find(Member.class,id);
     }
 
     @Override
