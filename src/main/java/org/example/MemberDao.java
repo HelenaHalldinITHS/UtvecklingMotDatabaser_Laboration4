@@ -9,5 +9,5 @@ public interface MemberDao {
     void create(Member student);
     void delete(Member student);
     List<Member> getActiveMembers();
-    List<Member> getNotActiveMembers();
+    List<Member> getInactiveMembers();
 }

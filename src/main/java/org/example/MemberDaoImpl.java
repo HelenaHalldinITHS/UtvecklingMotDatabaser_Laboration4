@@ -34,7 +34,7 @@ public class MemberDaoImpl implements MemberDao{
     }
 
     @Override
-    public List<Member> getNotActiveMembers() {
+    public List<Member> getInactiveMembers() {
         return null;
     }
 }
