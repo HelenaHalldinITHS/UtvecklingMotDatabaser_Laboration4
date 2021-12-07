@@ -11,14 +11,21 @@ public class App {
         memberDao.create(new Member("Tobias","Eklund", true));
         memberDao.create(new Member("Sara","Olsson", false));
         memberDao.create(new Member("Amanda","White", false));
+
         System.out.println(memberDao.getById(1));
+
         memberDao.getAll().forEach(System.out::println);
+
         Member tobias = memberDao.getById(4);
         tobias.setLastName("Halldin");
         memberDao.update(tobias);
-         */
+
         Member amanda = memberDao.getById(6);
         memberDao.delete(amanda);
+         */
+
+        memberDao.getActiveMembers().forEach(System.out::println);
+
 
 
 

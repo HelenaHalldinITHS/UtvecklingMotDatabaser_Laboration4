@@ -48,7 +48,7 @@ public class MemberDaoImpl implements MemberDao{
 
     @Override
     public List<Member> getActiveMembers() {
-        return null;
+        return em.createQuery("select m from Member m where m.active = true", Member.class).getResultList();
     }
 
     @Override
