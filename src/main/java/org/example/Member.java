@@ -1,9 +1,8 @@
 package org.example;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+
+import java.sql.Date;
 
 @Entity
 public class Member {
@@ -15,12 +14,22 @@ public class Member {
     private String lastName;
     private boolean active;
 
+    @Basic
+    private java.sql.Date RegistrationDate;
+
     public Member(){}
 
     public Member(String firstName, String lastName, boolean active) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.active = active;
+    }
+
+    public Member(String firstName, String lastName, boolean active, Date registrationDate) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.active = active;
+        RegistrationDate = registrationDate;
     }
 
     public String getFirstName() {
@@ -45,6 +54,14 @@ public class Member {
 
     public void setActive(boolean active) {
         this.active = active;
+    }
+
+    public Date getRegistrationDate() {
+        return RegistrationDate;
+    }
+
+    public void setRegistrationDate(Date registrationDate) {
+        RegistrationDate = registrationDate;
     }
 
     @Override
