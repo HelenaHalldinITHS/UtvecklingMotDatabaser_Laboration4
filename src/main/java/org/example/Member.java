@@ -13,9 +13,11 @@ public class Member {
     private String firstName;
     private String lastName;
     private boolean active;
-
     @Basic
     private java.sql.Date registrationDate;
+
+    @Enumerated(EnumType.ORDINAL)
+    private MembershipType membershipType;
 
     public Member(){}
 
@@ -24,6 +26,22 @@ public class Member {
         this.lastName = lastName;
         this.active = active;
         this.registrationDate = registrationDate;
+    }
+
+    public Member(String firstName, String lastName, boolean active, Date registrationDate, MembershipType membershipType) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.active = active;
+        this.registrationDate = registrationDate;
+        this.membershipType = membershipType;
+    }
+
+    public MembershipType getMembershipType() {
+        return membershipType;
+    }
+
+    public void setMembershipType(MembershipType membershipType) {
+        this.membershipType = membershipType;
     }
 
     public String getFirstName() {
@@ -66,6 +84,7 @@ public class Member {
                 ", lastName='" + lastName + '\'' +
                 ", active=" + active +
                 ", registrationDate=" + registrationDate +
+                ", membershipType=" + membershipType +
                 '}';
     }
 }

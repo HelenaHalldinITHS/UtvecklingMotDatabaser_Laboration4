@@ -7,12 +7,12 @@ public class App {
     public static void main( String[] args ) {
         MemberDao memberDao = new MemberDaoImpl();
 
-        memberDao.create(new Member("Helena", "Halldin", true, Date.valueOf("2011-01-20")));
-        memberDao.create(new Member("Stina","Karlsson", false, Date.valueOf("2011-04-05")));
-        memberDao.create(new Member("Muhamad","Ali", true, Date.valueOf("2013-03-20")));
-        memberDao.create(new Member("Tobias","Eklund", true, Date.valueOf("2017-06-22")));
-        memberDao.create(new Member("Sara","Olsson", false, Date.valueOf("2018-12-09")));
-        memberDao.create(new Member("Amanda","White", false, Date.valueOf("2019-12-02")));
+        memberDao.create(new Member("Helena", "Halldin", true, Date.valueOf("2011-01-20"),MembershipType.PLATINUM));
+        memberDao.create(new Member("Stina","Karlsson", false, Date.valueOf("2011-04-05"),MembershipType.PLATINUM));
+        memberDao.create(new Member("Muhamad","Ali", true, Date.valueOf("2013-03-20"),MembershipType.GOLD));
+        memberDao.create(new Member("Tobias","Eklund", true, Date.valueOf("2017-06-22"),MembershipType.SILVER));
+        memberDao.create(new Member("Sara","Olsson", false, Date.valueOf("2018-12-09"),MembershipType.BASIC));
+        memberDao.create(new Member("Amanda","White", false, Date.valueOf("2019-12-02"),MembershipType.BASIC));
 
         // Test av getById:
         System.out.println("Test av getById():");
