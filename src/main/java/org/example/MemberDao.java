@@ -14,4 +14,5 @@ public interface MemberDao {
     List<Member> getInactiveMembers();
     List<Member> getByLastName(String lastName);
     List<Member> getByRegistrationDateInterval(Date from, Date to);
+    List<Member> getByMembershipType(MembershipType membershipType);
 }
