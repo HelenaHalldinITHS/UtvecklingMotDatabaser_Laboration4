@@ -76,6 +76,9 @@ public class MemberDaoImpl implements MemberDao {
 
     @Override
     public List<Member> getByMembershipType(MembershipType membershipType) {
-        return null;
+        TypedQuery<Member> query = em.createQuery("select m from Member m where m.membershipType = :membershipType", Member.class);
+        query.setParameter("membershipType", membershipType);
+        return query.getResultList();
+
     }
 }

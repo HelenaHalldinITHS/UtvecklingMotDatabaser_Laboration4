@@ -61,9 +61,14 @@ public class App {
         memberDao.getByLastName("Halldin").forEach(System.out::println);
         System.out.println();
 
-        //Test
+        //Test av getByRegistrationDateInterval
         System.out.println("Test av getByRegistrationDateInterval: (borde skriva ut de som registrerat sig mellan 2000 och 2015)");
         memberDao.getByRegistrationDateInterval(Date.valueOf("2000-01-01"), Date.valueOf("2015-12-31")).forEach(System.out::println);
+        System.out.println();
+
+        //Test av getByMembershipType
+        System.out.println("Test av getByMembershipType : (borde skriva ut alla platinum medlemmar)");
+        memberDao.getByMembershipType(MembershipType.PLATINUM).forEach(System.out::println);
         System.out.println();
 
     }
