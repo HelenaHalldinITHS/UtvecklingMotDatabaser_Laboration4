@@ -16,7 +16,7 @@ public class Member {
     @Basic
     private java.sql.Date registrationDate;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private MembershipType membershipType;
 
     public Member(){}
