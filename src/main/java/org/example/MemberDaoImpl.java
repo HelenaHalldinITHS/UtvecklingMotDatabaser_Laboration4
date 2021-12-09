@@ -70,7 +70,7 @@ public class MemberDaoImpl implements MemberDao {
     public List<Member> getByRegistrationDateInterval(Date from, Date to) {
         TypedQuery<Member> query = em.createQuery("select m from Member m where m.registrationDate between :from and :to", Member.class);
         query.setParameter("from", from);
-        query.setParameter("to",to);
+        query.setParameter("to", to);
         return query.getResultList();
     }
 

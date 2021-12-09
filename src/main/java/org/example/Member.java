@@ -14,19 +14,12 @@ public class Member {
     private String lastName;
     private boolean active;
     @Basic
-    private java.sql.Date registrationDate;
+    private Date registrationDate;
 
     @Enumerated(EnumType.STRING)
     private MembershipType membershipType;
 
     public Member(){}
-
-    public Member(String firstName, String lastName, boolean active, Date registrationDate) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.active = active;
-        this.registrationDate = registrationDate;
-    }
 
     public Member(String firstName, String lastName, boolean active, Date registrationDate, MembershipType membershipType) {
         this.firstName = firstName;
